@@ -3,37 +3,48 @@ import styles from './styles.css';
 
 type MenuItemProps = {
     title: string;
-    quantity: number;
     price: number;
     image?: string;
+    quantity?: number;
     onIncrease?: () => void;
     onDecrease?: () => void;
+    onAddToCart?: () => void;
 };
 
 export const MenuItem: React.FC<MenuItemProps> = ({
                                                       title,
-                                                      quantity,
                                                       price,
                                                       image,
+                                                      quantity,
                                                       onIncrease,
                                                       onDecrease,
+                                                      onAddToCart,
                                                   }) => {
     return (
         <div className={styles.menuItem}>
-            <img src={image} alt={title} className={styles.image} />
+            {image && <img src={image} alt={title} className={styles.image} />}
 
             <h3 className={styles.title}>{title}</h3>
 
-            <p className={styles.quantity}>Quantity: {quantity}</p>
+            {typeof quantity === 'number' && (
+                <>
+                    <p className={styles.quantity}>Quantity: {quantity}</p>
+                    <div className={styles.controls}>
+                        <button onClick={onDecrease} className={styles.controlButton}>
+                            –
+                        </button>
+                        <button onClick={onIncrease} className={styles.controlButton}>
+                            +
+                        </button>
+                    </div>
+                </>
+            )}
 
-            <div className={styles.controls}>
-                <button onClick={onDecrease} className={styles.controlButton}>
-                    –
+            {onAddToCart && (
+                <button className={styles.cartButton} onClick={onAddToCart}>
+                    Add to cart
                 </button>
-                <button onClick={onIncrease} className={styles.controlButton}>
-                    +
-                </button>
-            </div>
+            )}
 
             <p className={styles.price}>${price}</p>
         </div>

@@ -10,8 +10,29 @@ export default {
     tags: ['autodocs'],
 } satisfies Meta<typeof MenuItem>;
 
-const Template: StoryFn<typeof MenuItem> = (args) => {
-    const [quantity, setQuantity] = useState(3);
+export const Simple: StoryFn<typeof MenuItem> = (args) => (
+    <MenuItem {...args} />
+);
+
+Simple.args = {
+    title: 'Business Burger',
+    price: 10,
+    image: placeholder,
+};
+
+export const WithAddToCart: StoryFn<typeof MenuItem> = (args) => (
+    <MenuItem {...args} />
+);
+
+WithAddToCart.args = {
+    title: 'Bread Basket',
+    price: 15,
+    image: placeholder,
+    onAddToCart: () => alert('Added to cart!'),
+};
+
+export const WithQuantity: StoryFn<typeof MenuItem> = (args) => {
+    const [quantity, setQuantity] = useState(2);
 
     return (
         <MenuItem
@@ -23,9 +44,8 @@ const Template: StoryFn<typeof MenuItem> = (args) => {
     );
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-    title: 'Business Burger',
+WithQuantity.args = {
+    title: 'Bread Basket',
     price: 60,
     image: placeholder,
 };
