@@ -1,0 +1,52 @@
+.menuItem {
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.title {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.quantity {
+    margin: 0.25em 0;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0.5em 0;
+}
+
+.controlButton {
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    padding: 0.25em 0.75em;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+
+.price {
+    margin: 0.25em 0;
+    font-size: 1em;
+    color: #333;
+}
