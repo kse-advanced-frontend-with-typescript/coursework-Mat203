@@ -12,6 +12,8 @@ import { LogoWhite } from '../Components/Logo/Logo';
 
 import { SocialMediaIcons } from '../Components/SocialIcon/SocialMediaIcons';
 
+import { PrimaryButton } from '../Components/Button/Button';
+
 const Demo: React.FC = () => {
     return (
         <Footer>
@@ -27,7 +29,7 @@ const Demo: React.FC = () => {
 
                 <FooterSubscribe>
                     <input type="email" placeholder="Email" />
-                    <button>Show more</button>
+                    <PrimaryButton>Subscribe</PrimaryButton>
                 </FooterSubscribe>
             </>
         </Footer>

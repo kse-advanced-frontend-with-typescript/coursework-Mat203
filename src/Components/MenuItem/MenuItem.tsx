@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './styles.css';
 
+import { SmallButton } from '../Button/Button';
+
 type MenuItemProps = {
     title: string;
     price: number;
@@ -23,7 +25,6 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     return (
         <div className={styles.menuItem}>
             {image && <img src={image} alt={title} className={styles.image} />}
-
             <h3 className={styles.title}>{title}</h3>
 
             {typeof quantity === 'number' && (
@@ -41,9 +42,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             )}
 
             {onAddToCart && (
-                <button className={styles.cartButton} onClick={onAddToCart}>
+                <SmallButton onClick={onAddToCart}>
                     Add to cart
-                </button>
+                </SmallButton>
             )}
 
             <p className={styles.price}>${price}</p>
