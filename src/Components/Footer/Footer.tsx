@@ -3,12 +3,10 @@ import styles from './styles.css';
 
 type FooterProps = {
     children: React.ReactNode;
-}
+};
 
 export const Footer: React.FC<FooterProps> = ({ children }) => {
-    return <footer className={styles.footer}>
-        {children}
-    </footer>;
+    return <footer className={styles.footer}>{children}</footer>;
 };
 
 export const FooterBrand: React.FC<FooterProps> = ({ children }) => {
