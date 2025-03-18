@@ -1,20 +1,18 @@
 import React from 'react';
 import styles from './styles.css';
 
-type HeaderProps = {
-    children: React.ReactNode;
-}
+import { Logo } from '../Logo/Logo';
 
-export const Header: React.FC<HeaderProps> = ({ children }) => {
-    return <header className={styles.header}>
-        {children}
-    </header>;
-};
+export const Header: React.FC = () => {
+    return (
+        <header className={styles.header}>
+            <div className={styles.leftSection}>
+                <Logo />
+            </div>
 
-export const HeaderRight: React.FC<HeaderProps> = ({ children }) => {
-    return <div className={styles.slots}>{children}</div>;
-};
-
-export const HeaderLeft: React.FC<HeaderProps> = ({ children }) => {
-    return <div className={styles.slots}>{children}</div>;
+            <div className={styles.rightSection}>
+                <span className={styles.menuPlaceholder}>Menu placeholder</span>
+            </div>
+        </header>
+    );
 };

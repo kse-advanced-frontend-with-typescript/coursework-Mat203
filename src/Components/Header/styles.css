@@ -1,13 +1,25 @@
 .header {
     display: flex;
-    background: #000;
-    font-family: 'Arial';
-    font-size: 1em;
-    vertical-align: center;
     justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    padding: 1em;
+    color: #fff;
 }
 
-.slots {
+.leftSection {
     display: flex;
-    vertical-align: center;
+    align-items: center;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+}
+
+.menuPlaceholder {
+    color: #ccc;
+    font-size: 1em;
+    margin-left: 1em;
 }
