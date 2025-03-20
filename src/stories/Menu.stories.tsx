@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { MenuItem } from '../Components/MenuItem/MenuItem';
-import placeholder from './MenuItem.png';
+import placeholder from './assets/MenuItem.png';
 
 export default {
     title: 'Example/MenuItem',
