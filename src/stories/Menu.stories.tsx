@@ -13,7 +13,6 @@ export default {
 export const Simple: StoryFn<typeof MenuItem> = (args) => (
     <MenuItem {...args} />
 );
-
 Simple.args = {
     title: 'Business Burger',
     price: 10,
@@ -23,7 +22,6 @@ Simple.args = {
 export const WithAddToCart: StoryFn<typeof MenuItem> = (args) => (
     <MenuItem {...args} />
 );
-
 WithAddToCart.args = {
     title: 'Bread Basket',
     price: 15,
@@ -34,18 +32,30 @@ WithAddToCart.args = {
 export const WithQuantity: StoryFn<typeof MenuItem> = (args) => {
     const [quantity, setQuantity] = useState(2);
 
+    const basePrice = 60;
+
+    const handleIncrease = () => {
+        setQuantity(quantity + 1);
+    };
+
+    const handleDecrease = () => {
+        setQuantity(Math.max(1, quantity - 1));
+    };
+
+    const totalPrice = basePrice * quantity;
+
     return (
         <MenuItem
             {...args}
             quantity={quantity}
-            onIncrease={() => setQuantity(quantity + 1)}
-            onDecrease={() => setQuantity(Math.max(0, quantity - 1))}
+            price={totalPrice}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
         />
     );
 };
 
 WithQuantity.args = {
     title: 'Bread Basket',
-    price: 60,
     image: placeholder,
 };

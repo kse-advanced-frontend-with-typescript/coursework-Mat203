@@ -28,17 +28,15 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             <h3 className={styles.title}>{title}</h3>
 
             {typeof quantity === 'number' && (
-                <>
-                    <p className={styles.quantity}>Quantity: {quantity}</p>
-                    <div className={styles.controls}>
-                        <button onClick={onDecrease} className={styles.controlButton}>
-                            –
-                        </button>
-                        <button onClick={onIncrease} className={styles.controlButton}>
-                            +
-                        </button>
-                    </div>
-                </>
+                <div className={styles.counterContainer}>
+                    <button onClick={onDecrease} className={styles.counterButton}>
+                        –
+                    </button>
+                    <span className={styles.quantityDisplay}>{quantity}</span>
+                    <button onClick={onIncrease} className={styles.counterButton}>
+                        +
+                    </button>
+                </div>
             )}
 
             {onAddToCart && (

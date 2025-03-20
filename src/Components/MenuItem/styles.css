@@ -3,7 +3,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
@@ -65,4 +65,29 @@
 
 .cartButton:hover {
     background-color: #dc7b04;
+}
+
+.counterContainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    padding: 0.5em 1em;
+    width: 80px;
+}
+
+.counterButton {
+    border: none;
+    background: none;
+    font-size: 1.2em;
+    color: #666;
+    cursor: pointer;
+}
+
+.counterButton:hover {
+    color: #000;
 }

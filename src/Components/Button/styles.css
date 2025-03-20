@@ -1,10 +1,14 @@
 .primaryButton {
+    color: #FFFFFF;
     display: inline-block;
     padding: 0.75em 1.5em;
-    background-color: #f28c38;
+    background-color: #FF7E02;
+    font-family: Roboto, sans-serif;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 0.9em;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.15);
 }
 
 .primaryButton:hover {
@@ -12,13 +16,15 @@
 }
 
 .smallButton {
-    padding: 0.3em 0.6em;
-    background-color: #f28c38;
+    padding: 0.6em 0.6em;
+    background-color: #FF7E02;
     border: none;
     border-radius: 4px;
-    color: #fff;
+    font-family: Roboto, sans-serif;
+    color: #FFFFFF;
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 0.8em;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.15);
 }
 
 .smallButton:hover {
