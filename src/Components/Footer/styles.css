@@ -1,0 +1,46 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2b2b38;
+    color: white;
+    font-family: Roboto, sans-serif;
+    padding: 2rem;
+    text-align: center;
+}
+
+.brand {
+    margin-bottom: 2rem;
+}
+
+.brand h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.social {
+    margin: 1rem 0;
+}
+
+.social h2 {
+    margin-bottom: 1rem;
+}
+
+
+.subscribe {
+    margin-top: 1rem;
+}
+
+.subscribe h2 {
+    margin-bottom: 1rem;
+}
+
+.subscribe input {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
