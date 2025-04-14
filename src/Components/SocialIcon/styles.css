@@ -1,0 +1,22 @@
+.socialMediaIcons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.iconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #FF7E02;
+    cursor: pointer;
+}
+
+.iconImage {
+    width: 30px;
+    height: 30px;
+}

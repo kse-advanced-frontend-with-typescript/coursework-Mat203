@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    font-family: Roboto, sans-serif;
+    padding: 1em;
+    color: #fff;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.15);
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+}
+
+.menuPlaceholder {
+    color: #ccc;
+    font-size: 1em;
+    margin-left: 1em;
+}
