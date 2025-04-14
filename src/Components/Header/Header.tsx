@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './styles.css';
 
-import { LogoWhite } from '../Logo/Logo';
+import { LogoBlack } from '../Logo/Logo';
 import hamburgerIcon from '../../assets/hamburger 1.png';
 
 export const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.leftSection}>
-                <LogoWhite />
+                <LogoBlack />
             </div>
 
             <div className={styles.rightSection}>

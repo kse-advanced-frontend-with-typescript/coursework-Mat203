@@ -1,0 +1,129 @@
+/*
+   Пример адаптивных стилей под макет,
+   где сверху заголовок и кнопка, справа картинка (на desktop),
+   а на мобильных устройствах всё в одну колонку
+*/
+
+.page {
+    display: flex;
+    flex-direction: column;
+    /* ширина 100% для мобильных,
+       ограничиваем ширину на больших экранах */
+    width: 100%;
+    margin: 0 auto; /* центрируем на больших экранах */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------- HERO SECTION -------------------------- */
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.heroText {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.heroText h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2b2b38; /* темно-серый */
+}
+
+.heroImageContainer {
+    width: 100%;
+    max-width: 600px; /* ограничиваем ширину изображения */
+}
+
+.heroImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* --- На больших экранах располагаем контент в 2 колонки (текст + картинка) --- */
+@media (min-width: 768px) {
+    .heroSection {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .heroText {
+        flex: 1;
+        margin-right: 2rem;
+        text-align: left;
+    }
+
+    .heroText h1 {
+        font-size: 2.2rem;
+    }
+
+    .heroImageContainer {
+        flex: 1;
+    }
+}
+
+/* -------------------------- FEATURES SECTION -------------------------- */
+.featuresSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.featureItem {
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+.featureIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+/* --- Распределяем фичи в одну строку на >=768px, если хотим ---- */
+@media (min-width: 768px) {
+    .featuresSection {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+    .featureItem {
+        margin-bottom: 0;
+    }
+}
+
+/* -------------------------- MENU SECTION -------------------------- */
+.menuSection {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.menuSection h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #2b2b38;
+}
+
+.menuGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .menuGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
