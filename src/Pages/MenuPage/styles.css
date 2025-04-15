@@ -1,0 +1,39 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mainContent {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    flex: 1;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.menuGrid {
+    display: grid;
+    gap: 1.5rem;
+
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+    .menuGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .menuGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

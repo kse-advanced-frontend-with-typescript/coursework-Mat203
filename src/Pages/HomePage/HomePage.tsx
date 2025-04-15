@@ -6,27 +6,29 @@ import { Footer, FooterBrand, FooterSocial, FooterSubscribe } from '../../Compon
 import { MenuItem } from '../../Components/MenuItem/MenuItem';
 import { PrimaryButton } from '../../Components/Button/Button';
 import { SocialMediaIcons } from '../../Components/SocialIcon/SocialMediaIcons';
+import { useNavigate } from 'react-router-dom';
 import bignessLunchImg from '../../assets/bigness_lunch.png';
 import bellImg from '../../assets/bell.png';
 import burgerImg from '../../assets/burger.png';
 import locationImg from '../../assets/location.png';
 
 export const HomePage: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className={styles.page}>
             <Header />
 
             <main className={styles.main}>
-                {/* HERO */}
                 <section className={styles.hero}>
                     <img src="/assets/hero.jpg" alt="Hero" className={styles.heroImage} />
                     <div className={styles.heroText}>
                         <h1>Business Lunch Always At Your Touch!</h1>
-                        <PrimaryButton>Order Service</PrimaryButton>
+                        <PrimaryButton onClick={() => navigate('/cart')}>
+                            Order Service
+                        </PrimaryButton>
                     </div>
                 </section>
 
-                {/* FEATURES */}
                 <section className={styles.features}>
                     <div className={styles.featureItem}>
                         <img src={bellImg} alt="Bell" className={styles.featureIcon} />
@@ -45,7 +47,6 @@ export const HomePage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* MENU */}
                 <section className={styles.menu}>
                     <h2>Make An Order!</h2>
                     <div className={styles.menuGrid}>
@@ -64,7 +65,6 @@ export const HomePage: React.FC = () => {
                 </section>
             </main>
 
-            {/* FOOTER */}
             <Footer>
                 <FooterBrand>
                     <h1><span style={{ color: 'orange' }}>Anya</span>Baluvana</h1>

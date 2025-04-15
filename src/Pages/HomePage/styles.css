@@ -1,85 +1,94 @@
-/*
-   Пример адаптивных стилей под макет,
-   где сверху заголовок и кнопка, справа картинка (на desktop),
-   а на мобильных устройствах всё в одну колонку
-*/
+:root {
+    font-size: 16px;
+    --main-color: #2b2b38;
+    --secondary-color: #f9f9f9;
+}
+
+@media (min-width: 768px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-color);
+    background-color: #fff;
+}
 
 .page {
     display: flex;
     flex-direction: column;
-    /* ширина 100% для мобильных,
-       ограничиваем ширину на больших экранах */
     width: 100%;
-    margin: 0 auto; /* центрируем на больших экранах */
-    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
 }
 
-/* -------------------------- HERO SECTION -------------------------- */
-.heroSection {
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
-}
-
-.heroText {
     text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.heroText h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #2b2b38; /* темно-серый */
-}
-
-.heroImageContainer {
-    width: 100%;
-    max-width: 600px; /* ограничиваем ширину изображения */
+    padding: 2rem 0;
+    gap: 1.5rem;
 }
 
 .heroImage {
     width: 100%;
+    max-width: 600px;
     height: auto;
     border-radius: 8px;
 }
 
-/* --- На больших экранах располагаем контент в 2 колонки (текст + картинка) --- */
+
+.heroText h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
 @media (min-width: 768px) {
-    .heroSection {
+    .hero {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        text-align: left;
     }
-
     .heroText {
         flex: 1;
         margin-right: 2rem;
-        text-align: left;
     }
-
-    .heroText h1 {
-        font-size: 2.2rem;
-    }
-
-    .heroImageContainer {
+    .heroImage {
         flex: 1;
+        max-width: 50%;
+        margin-right: 0;
+    }
+    .heroText h1 {
+        font-size: 2.4rem;
     }
 }
 
-/* -------------------------- FEATURES SECTION -------------------------- */
-.featuresSection {
+
+.features {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--secondary-color);
+    gap: 2rem;
 }
 
 .featureItem {
     max-width: 400px;
-    margin-bottom: 2rem;
+    margin: 0 auto;
 }
 
 .featureIcon {
@@ -88,42 +97,64 @@
     margin-bottom: 1rem;
 }
 
-/* --- Распределяем фичи в одну строку на >=768px, если хотим ---- */
 @media (min-width: 768px) {
-    .featuresSection {
+    .features {
         flex-direction: row;
         justify-content: space-around;
         text-align: left;
     }
     .featureItem {
-        margin-bottom: 0;
+        margin: 0;
     }
 }
 
-/* -------------------------- MENU SECTION -------------------------- */
-.menuSection {
+.menu {
     text-align: center;
     padding: 2rem 1rem;
 }
 
-.menuSection h2 {
-    font-size: 1.6rem;
+.menu h2 {
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #2b2b38;
 }
 
 .menuGrid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1.5rem;
 }
 
 @media (min-width: 768px) {
     .menuGrid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.footer {
+    background-color: #2b2b38;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer h1, .footer h2 {
+    color: #fff;
+}
+
+.footer input[type="email"] {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
     }
 }
