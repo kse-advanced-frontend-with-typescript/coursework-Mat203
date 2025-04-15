@@ -2,11 +2,10 @@ import React from 'react';
 import styles from './styles.css';
 
 import { Header } from '../../Components/Header/Header';
-import { Footer, FooterBrand, FooterSocial, FooterSubscribe } from '../../Components/Footer/Footer';
 import { MenuItem } from '../../Components/MenuItem/MenuItem';
 import { PrimaryButton } from '../../Components/Button/Button';
-import { SocialMediaIcons } from '../../Components/SocialIcon/SocialMediaIcons';
 import { useNavigate } from 'react-router-dom';
+import { DefaultFooter } from '../../Components/Footer/DefaultFooter';
 import bignessLunchImg from '../../assets/bigness_lunch.png';
 import bellImg from '../../assets/bell.png';
 import burgerImg from '../../assets/burger.png';
@@ -65,23 +64,7 @@ export const HomePage: React.FC = () => {
                 </section>
             </main>
 
-            <Footer>
-                <FooterBrand>
-                    <h1><span style={{ color: 'orange' }}>Anya</span>Baluvana</h1>
-                    <p>Don’t waste much energy on your work – make an order and take a break!</p>
-                </FooterBrand>
-
-                <FooterSocial>
-                    <h2>Social media</h2>
-                    <SocialMediaIcons />
-                </FooterSocial>
-
-                <FooterSubscribe>
-                    <h2>Subscribe to receive a discount!</h2>
-                    <input type="email" placeholder="Email" />
-                    <PrimaryButton>Subscribe</PrimaryButton>
-                </FooterSubscribe>
-            </Footer>
+            <DefaultFooter />
         </div>
     );
 };

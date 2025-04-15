@@ -2,13 +2,11 @@ import React, { useState, FormEvent, useContext } from 'react';
 import styles from './styles.css';
 
 import { Header } from '../../Components/Header/Header';
-import { Footer, FooterBrand, FooterSocial, FooterSubscribe } from '../../Components/Footer/Footer';
+import { DefaultFooter } from '../../Components/Footer/DefaultFooter';
 import { NotificationElement } from '../../Components/Notification/NotificationElement';
-import { SocialMediaIcons } from '../../Components/SocialIcon/SocialMediaIcons';
-import { PrimaryButton } from '../../Components/Button/Button';
 import { MenuItem } from '../../Components/MenuItem/MenuItem';
 
-import { CartContext } from '../../CartContext';
+import { CartContext } from '../../../modules/cart/CartContext';
 
 export const CheckoutPage: React.FC = () => {
     const { cartItems, increaseItem, decreaseItem, totalCost } = useContext(CartContext);
@@ -143,23 +141,7 @@ export const CheckoutPage: React.FC = () => {
                 </div>
             </main>
 
-            <Footer>
-                <FooterBrand>
-                    <h1><span style={{ color: 'orange' }}>Anya</span>Baluvana</h1>
-                    <p>Don’t waste much energy on your work – make an order and take a break!</p>
-                </FooterBrand>
-
-                <FooterSocial>
-                    <h2>Social media</h2>
-                    <SocialMediaIcons />
-                </FooterSocial>
-
-                <FooterSubscribe>
-                    <h2>Subscribe to receive a discount!</h2>
-                    <input type="email" placeholder="Email" />
-                    <PrimaryButton>Subscribe</PrimaryButton>
-                </FooterSubscribe>
-            </Footer>
+        <DefaultFooter />
         </div>
     );
 };

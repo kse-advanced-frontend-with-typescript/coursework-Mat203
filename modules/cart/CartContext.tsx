@@ -1,12 +1,12 @@
 import React, { createContext, useState, useEffect } from 'react';
-
-export type CartItem = {
-    id: number;
-    title: string;
-    price: number;
-    quantity: number;
-    image?: string;
-};
+import { CartItem } from './cartTypes';
+import {
+    addToCartLogic,
+    increaseItemLogic,
+    decreaseItemLogic,
+    removeItemLogic,
+    calculateTotalCost
+} from './cartLogic';
 
 type CartContextType = {
     cartItems: CartItem[];
@@ -37,46 +37,22 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }, [cartItems]);
 
     const addToCart = (newItem: CartItem) => {
-        setCartItems(prev => {
-            const existing = prev.find(item => item.id === newItem.id);
-            if (existing) {
-                return prev.map(item =>
-                    item.id === existing.id
-                        ? { ...item, quantity: item.quantity + newItem.quantity }
-                        : item
-                );
-            } else {
-                return [...prev, newItem];
-            }
-        });
+        setCartItems(prev => addToCartLogic(prev, newItem));
     };
 
     const increaseItem = (id: number) => {
-        setCartItems(prev =>
-            prev.map(item =>
-                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-            )
-        );
+        setCartItems(prev => increaseItemLogic(prev, id));
     };
 
     const decreaseItem = (id: number) => {
-        setCartItems(prev =>
-            prev.map(item =>
-                item.id === id && item.quantity > 1
-                    ? { ...item, quantity: item.quantity - 1 }
-                    : item
-            )
-        );
+        setCartItems(prev => decreaseItemLogic(prev, id));
     };
 
     const removeItem = (id: number) => {
-        setCartItems(prev => prev.filter(item => item.id !== id));
+        setCartItems(prev => removeItemLogic(prev, id));
     };
 
-    const totalCost = cartItems.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
-    );
+    const totalCost = calculateTotalCost(cartItems);
 
     return (
         <CartContext.Provider
