@@ -6,7 +6,7 @@ import {
     calculateTotalCost
 } from '../cartLogic';
 
-import { CartItem } from '../CartContext';
+import { CartItem } from '../cartTypes';
 
 describe('cartLogic functions', () => {
     const burger: CartItem = {
@@ -31,9 +31,8 @@ describe('cartLogic functions', () => {
 
         it('increases quantity if item already in cart', () => {
             const current: CartItem[] = [burger];
-            const newBurger = { ...burger, quantity: 2 }; // пытаемся добавить 2
+            const newBurger = { ...burger, quantity: 2 };
             const result = addToCartLogic(current, newBurger);
-            // теперь должно получиться quantity = 3
             expect(result[0]).toEqual({ ...burger, quantity: 3 });
         });
     });
@@ -41,23 +40,21 @@ describe('cartLogic functions', () => {
     describe('increaseItemLogic', () => {
         it('increases quantity by 1', () => {
             const current: CartItem[] = [burger, pizza];
-            const result = increaseItemLogic(current, 2); // pizza
-            // pizza была quantity=2, станет 3
+            const result = increaseItemLogic(current, 2);
             expect(result[1].quantity).toBe(3);
         });
     });
 
     describe('decreaseItemLogic', () => {
         it('decreases quantity by 1 if > 1', () => {
-            const current: CartItem[] = [pizza]; // quantity=2
+            const current: CartItem[] = [pizza];
             const result = decreaseItemLogic(current, 2);
             expect(result[0].quantity).toBe(1);
         });
 
         it('does not go below 1', () => {
-            const current: CartItem[] = [burger]; // quantity=1
+            const current: CartItem[] = [burger];
             const result = decreaseItemLogic(current, 1);
-            // burger остаётся quantity=1
             expect(result[0].quantity).toBe(1);
         });
     });
@@ -74,8 +71,6 @@ describe('cartLogic functions', () => {
     describe('calculateTotalCost', () => {
         it('returns the sum of price * quantity for all items', () => {
             const current: CartItem[] = [burger, pizza];
-            // burger price=10, quantity=1 -> 10
-            // pizza price=20, quantity=2 -> 40
             const total = calculateTotalCost(current);
             expect(total).toBe(50);
         });
