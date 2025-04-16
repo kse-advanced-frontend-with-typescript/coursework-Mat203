@@ -28,8 +28,7 @@ body, html {
 .main {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
+    margin: 1em auto;
 }
 
 .hero {
@@ -43,7 +42,7 @@ body, html {
 
 .heroImage {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: auto;
     border-radius: 8px;
 }
@@ -101,7 +100,6 @@ body, html {
     .features {
         flex-direction: row;
         justify-content: space-around;
-        text-align: left;
     }
     .featureItem {
         margin: 0;
@@ -122,39 +120,12 @@ body, html {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 600px;
     margin: 0 auto 1.5rem;
+    justify-items: center;
 }
 
 @media (min-width: 768px) {
     .menuGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-.footer {
-    background-color: #2b2b38;
-    color: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.footer h1, .footer h2 {
-    color: #fff;
-}
-
-.footer input[type="email"] {
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-    .footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+        grid-template-columns: repeat(3, 1fr);
     }
 }

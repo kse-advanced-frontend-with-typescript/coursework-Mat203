@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './styles.css';
 
 import { Header } from '../../Components/Header/Header';
@@ -36,7 +36,6 @@ export const CartPage: React.FC = () => {
     return (
         <div className={styles.page}>
             <Header />
-
             <main className={styles.mainContent}>
                 {notification && (
                     <NotificationElement
@@ -44,9 +43,7 @@ export const CartPage: React.FC = () => {
                         level="info"
                     />
                 )}
-
                 <h1 className={styles.pageTitle}>Your Cart:</h1>
-
                 <div className={styles.cartGrid}>
                     {cartItems.map(item => (
                         <div key={item.id} className={styles.cartCard}>
@@ -57,19 +54,12 @@ export const CartPage: React.FC = () => {
                                 quantity={item.quantity}
                                 onIncrease={() => increaseItem(item.id)}
                                 onDecrease={() => decreaseItem(item.id)}
+                                onRemove={() => handleRemove(item.id)}
                             />
-                            <button
-                                onClick={() => handleRemove(item.id)}
-                                className={styles.removeButton}
-                            >
-                                Remove
-                            </button>
                         </div>
                     ))}
                 </div>
-
                 <div className={styles.totalRow}>Total: ${totalCost.toFixed(2)}</div>
-
                 <div data-cy="cart-actions" className={styles.actions}>
                     <PrimaryButton onClick={() => navigate('/menu')}>
                         Continue Ordering

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './styles.css';
 
 import { LogoBlack } from '../Logo/Logo';
-import hamburgerIcon from '../../assets/hamburger 1.png';
+import hamburgerIcon from '../../assets/hamburger.png';
 import { SideMenu } from '../SideMenu/SideMenu';
 
 export const Header: React.FC = () => {

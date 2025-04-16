@@ -10,6 +10,7 @@ import { DefaultFooter } from '../../Components/Footer/DefaultFooter';
 import bellImg from '../../assets/bell.png';
 import burgerImg from '../../assets/burger.png';
 import locationImg from '../../assets/location.png';
+import heroImg from '../../assets/hero.png';
 
 import { menuData } from '../../data/MenuData';
 
@@ -22,7 +23,7 @@ export const HomePage: React.FC = () => {
 
             <main className={styles.main}>
                 <section className={styles.hero}>
-                    <img src="/assets/hero.jpg" alt="Hero" className={styles.heroImage} />
+                    <img src={heroImg} alt="Hero" className={styles.heroImage} />
                     <div className={styles.heroText}>
                         <h1>Business Lunch Always At Your Touch!</h1>
                         <PrimaryButton onClick={() => navigate('/cart')}>
@@ -52,7 +53,7 @@ export const HomePage: React.FC = () => {
                 <section className={styles.menu}>
                     <h2>Make An Order!</h2>
                     <div className={styles.menuGrid}>
-                        {menuData.slice(0, 2).map(item => (
+                        {menuData.slice(0, 3).map(item => (
                             <MenuItem
                                 key={item.id}
                                 title={item.title}

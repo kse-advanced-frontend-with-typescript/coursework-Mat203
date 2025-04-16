@@ -11,6 +11,7 @@ type MenuItemProps = {
     onIncrease?: () => void;
     onDecrease?: () => void;
     onAddToCart?: () => void;
+    onRemove?: () => void;
 };
 
 export const MenuItem: React.FC<MenuItemProps> = ({
@@ -21,6 +22,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
                                                       onIncrease,
                                                       onDecrease,
                                                       onAddToCart,
+                                                      onRemove,
                                                   }) => {
     return (
         <div className={styles.menuItem}>
@@ -42,6 +44,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {onAddToCart && (
                 <SmallButton onClick={onAddToCart}>
                     Add to cart
+                </SmallButton>
+            )}
+
+            {onRemove && (
+                <SmallButton onClick={onRemove}>
+                    Remove
                 </SmallButton>
             )}
 
