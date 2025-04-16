@@ -1,29 +1,28 @@
-export type CheckoutData = {
-    name: string;
-    phone: string;
-    email?: string;
-    date?: string;
-    time?: string;
-    address?: string;
-};
+import { z } from 'zod';
+
+export const CheckoutDataSchema = z.object({
+    name: z.string().trim().min(1, { message: 'Name is required' }),
+    phone: z.string().min(1, { message: 'Phone is required' }),
+    email: z.string().email().optional(),
+    date: z.string().optional(),
+    time: z.string().optional(),
+    address: z.string().optional(),
+});
+
+export type CheckoutData = z.infer<typeof CheckoutDataSchema>;
 
 export function validateCheckoutData(data: CheckoutData): string | null {
-    if (!data.name.trim()) {
-        return 'Name is required';
+    const result = CheckoutDataSchema.safeParse(data);
+    if (!result.success) {
+        return result.error.errors[0].message;
     }
-    if (!data.phone.trim()) {
-        return 'Phone is required';
-    }
-
     return null;
 }
-
 
 export function confirmOrder(data: CheckoutData): string {
     const error = validateCheckoutData(data);
     if (error) {
         return `Error: ${error}`;
     }
-
     return `Order confirmed! We will contact you soon, ${data.name}`;
 }

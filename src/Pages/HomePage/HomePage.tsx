@@ -1,18 +1,21 @@
 import React from 'react';
 import styles from './styles.css';
+import { useNavigate } from 'react-router-dom';
 
 import { Header } from '../../Components/Header/Header';
 import { MenuItem } from '../../Components/MenuItem/MenuItem';
 import { PrimaryButton } from '../../Components/Button/Button';
-import { useNavigate } from 'react-router-dom';
 import { DefaultFooter } from '../../Components/Footer/DefaultFooter';
-import bignessLunchImg from '../../assets/bigness_lunch.png';
+
 import bellImg from '../../assets/bell.png';
 import burgerImg from '../../assets/burger.png';
 import locationImg from '../../assets/location.png';
 
+import { menuData } from '../../data/MenuData';
+
 export const HomePage: React.FC = () => {
     const navigate = useNavigate();
+
     return (
         <div className={styles.page}>
             <Header />
@@ -49,18 +52,18 @@ export const HomePage: React.FC = () => {
                 <section className={styles.menu}>
                     <h2>Make An Order!</h2>
                     <div className={styles.menuGrid}>
-                        <MenuItem
-                            title="BIGNess lunch"
-                            price={30}
-                            image={bignessLunchImg}
-                        />
-                        <MenuItem
-                            title="Business Burger"
-                            price={10}
-                            image={bignessLunchImg}
-                        />
+                        {menuData.slice(0, 2).map(item => (
+                            <MenuItem
+                                key={item.id}
+                                title={item.title}
+                                price={item.price}
+                                image={item.image}
+                            />
+                        ))}
                     </div>
-                    <PrimaryButton>Show more</PrimaryButton>
+                    <PrimaryButton onClick={() => navigate('/menu')}>
+                        Show more
+                    </PrimaryButton>
                 </section>
             </main>
 

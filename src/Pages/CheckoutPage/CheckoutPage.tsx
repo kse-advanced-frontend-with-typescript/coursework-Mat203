@@ -7,6 +7,7 @@ import { Header } from '../../Components/Header/Header';
 import { DefaultFooter } from '../../Components/Footer/DefaultFooter';
 import { NotificationElement } from '../../Components/Notification/NotificationElement';
 
+import { MapContainer } from '../../Components/Map/MapContainer';
 
 export const CheckoutPage: React.FC = () => {
     const [name, setName] = useState('');
@@ -40,6 +41,10 @@ export const CheckoutPage: React.FC = () => {
             setTime('');
             setAddress('');
         }
+    };
+
+    const handleAddressSelect = (selectedAddress: string) => {
+        setAddress(selectedAddress);
     };
 
     return (
@@ -118,11 +123,8 @@ export const CheckoutPage: React.FC = () => {
                     </label>
 
                     <div className={styles.mapPlaceholder}>
-                        <img
-                            src="/assets/mapPlaceholder.jpg"
-                            alt="Map placeholder"
-                            className={styles.mapImage}
-                        />
+                        <p className={styles.mapHelp}>Click on the map to select your address</p>
+                        <MapContainer onAddressSelect={handleAddressSelect} />
                     </div>
 
                     <button type="submit" className={styles.confirmButton}>
