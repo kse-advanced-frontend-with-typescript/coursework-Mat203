@@ -70,7 +70,7 @@ export const CartPage: React.FC = () => {
 
                 <div className={styles.totalRow}>Total: ${totalCost.toFixed(2)}</div>
 
-                <div className={styles.actions}>
+                <div data-cy="cart-actions" className={styles.actions}>
                     <PrimaryButton onClick={() => navigate('/menu')}>
                         Continue Ordering
                     </PrimaryButton>
