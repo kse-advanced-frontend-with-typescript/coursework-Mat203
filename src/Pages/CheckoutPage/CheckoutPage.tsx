@@ -65,6 +65,7 @@ export const CheckoutPage: React.FC = () => {
                     <label>
                         Name*:
                         <input
+                            data-cy="checkout-name"
                             className={styles.textInput}
                             value={name}
                             onChange={e => setName(e.target.value)}
@@ -74,6 +75,7 @@ export const CheckoutPage: React.FC = () => {
                     <label>
                         Phone*:
                         <input
+                            data-cy="phone"
                             className={styles.textInput}
                             value={phone}
                             onChange={e => setPhone(e.target.value)}
@@ -84,6 +86,7 @@ export const CheckoutPage: React.FC = () => {
                     <label>
                         Email:
                         <input
+                            data-cy="email"
                             className={styles.textInput}
                             type="email"
                             value={email}

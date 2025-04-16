@@ -15,7 +15,7 @@ export const MenuPage: React.FC = () => {
     const [sortOption, setSortOption] = useState<SortOption>('price-asc');
 
     const handleAddToCart = (item: typeof menuData[0]) => {
-        addToCart({ ...item, quantity: 1 });
+        addToCart({ ...item, quantity: 1});
         setNotification(`Added "${item.title}" to cart!`);
         setTimeout(() => setNotification(''), 2000);
     };

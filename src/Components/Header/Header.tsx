@@ -25,6 +25,7 @@ export const Header: React.FC = () => {
             <div className={styles.rightSection}>
                 <img
                     src={hamburgerIcon}
+                    data-cy="hamburgerIcon"
                     alt="Menu"
                     className={styles.hamburgerIcon}
                     onClick={handleBurgerClick}

@@ -16,7 +16,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
     };
 
     return (
-        <div className={`${styles.sideMenu} ${isOpen ? styles.open : ''}`}>
+        <div data-cy="sideMenu" className={`${styles.sideMenu} ${isOpen ? styles.open : ''}`}>
             <button className={styles.closeButton} onClick={onClose}>
                 &times;
             </button>
