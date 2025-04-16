@@ -4,8 +4,8 @@ describe('checkoutLogic functions', () => {
     describe('validateCheckoutData', () => {
         it('should return error if name is empty', () => {
             const data: CheckoutData = {
-                name: '   ',
-                phone: '0501234567'
+                name: '  ',
+                phone: '0501234567',
             };
             const result = validateCheckoutData(data);
             expect(result).toBe('Name is required');
@@ -14,7 +14,7 @@ describe('checkoutLogic functions', () => {
         it('should return error if phone is empty', () => {
             const data: CheckoutData = {
                 name: 'John',
-                phone: ''
+                phone: '',
             };
             const result = validateCheckoutData(data);
             expect(result).toBe('Phone is required');
@@ -27,7 +27,7 @@ describe('checkoutLogic functions', () => {
                 email: 'john@example.com',
                 date: '2023-10-10',
                 time: '12:00',
-                address: 'Main Street, City'
+                address: 'Main Street, City',
             };
             const result = validateCheckoutData(data);
             expect(result).toBeNull();
@@ -38,7 +38,7 @@ describe('checkoutLogic functions', () => {
         it('should return error message if validation fails', () => {
             const data: CheckoutData = {
                 name: '',
-                phone: '0501234567'
+                phone: '0501234567',
             };
             const result = confirmOrder(data);
             expect(result).toMatch(/^Error: Name is required/);
@@ -48,7 +48,7 @@ describe('checkoutLogic functions', () => {
             const data: CheckoutData = {
                 name: 'Alice',
                 phone: '0501234567',
-                email: 'alice@example.com'
+                email: 'alice@example.com',
             };
             const result = confirmOrder(data);
             expect(result).toBe('Order confirmed! We will contact you soon, Alice');
