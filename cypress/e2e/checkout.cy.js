@@ -1,5 +1,5 @@
 describe('Checkout flow', () => {
-    const baseUrl = 'http://localhost:8081';
+    const baseUrl = 'http://localhost:8080';
 
     it('should fill checkout form correctly and confirm the order', () => {
         cy.visit(baseUrl);

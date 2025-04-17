@@ -1,5 +1,5 @@
 describe('E2E Product Show Flow', () => {
-    const baseUrl = 'http://localhost:8081';
+    const baseUrl = 'http://localhost:8080';
 
     it('should add BIGNess lunch to cart and verify it in cart', () => {
         cy.visit(baseUrl);
