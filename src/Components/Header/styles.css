@@ -19,6 +19,12 @@
     align-items: center;
 }
 
+.hamburgerIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 .menuPlaceholder {
     color: #ccc;
     font-size: 1em;
